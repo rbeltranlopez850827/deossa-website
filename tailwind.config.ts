@@ -57,6 +57,24 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Deossa Custom Colors
+        deossa: {
+          blue: "hsl(var(--blue-deep))",
+          yellow: "hsl(var(--yellow-glow))",  
+          red: "hsl(var(--red-vibrant))",
+        },
+      },
+      backgroundImage: {
+        'hero-gradient': 'var(--hero-gradient)',
+        'section-gradient': 'var(--section-gradient)',
+      },
+      boxShadow: {
+        'soft': 'var(--shadow-soft)',
+        'glow': 'var(--shadow-glow)',
+      },
+      transitionProperty: {
+        'smooth': 'var(--transition-smooth)',
+        'bounce': 'var(--transition-bounce)',
       },
       borderRadius: {
         lg: "var(--radius)",
