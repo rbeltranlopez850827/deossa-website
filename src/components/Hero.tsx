@@ -10,13 +10,13 @@ const Hero = () => {
   };
 
   const openWhatsApp = () => {
-    window.open("https://wa.me/1234567890", "_blank");
+    window.open("https://wa.me/4168443543", "_blank");
   };
 
   return (
     <section id="home" className="min-h-screen flex items-center bg-hero-gradient relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSI0Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-20"></div>
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSI0Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-10"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -52,14 +52,15 @@ const Hero = () => {
               </Button>
               
               <Button
-                onClick={openWhatsApp}
-                size="lg"
-                variant="outline"
-                className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-bold text-lg px-8 py-6 transition-bounce hover:scale-105"
-              >
-                <MessageCircle className="w-5 h-5 mr-2" />
-                WhatsApp Us
-              </Button>
+  onClick={openWhatsApp}
+  size="lg"
+  variant="outline"
+  className="bg-white border-2 border-primary text-black hover:bg-primary hover:text-white font-bold text-lg px-8 py-6 transition-bounce hover:scale-105"
+>
+  <MessageCircle className="w-5 h-5 mr-2" />
+  WhatsApp Us
+</Button>
+
             </div>
 
             {/* Trust Indicators */}
