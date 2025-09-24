@@ -6,11 +6,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Phone, Mail, MapPin, MessageCircle, Clock, Star } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,16 +23,37 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+
+    try {
+      await emailjs.send(
+        "service_omxg6v8", // Reemplaza con tu Service ID
+        "template_xyz456", // Reemplaza con tu Template ID
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.message,
+        },
+        "YOUR_PUBLIC_KEY" // Reemplaza con tu Public Key
+      );
+
       toast({
         title: "Quote Request Sent!",
         description: "We'll get back to you within 24 hours with your personalized quote.",
       });
+
       setFormData({ name: "", email: "", phone: "", service: "", message: "" });
-    }, 2000);
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast({
+        title: "Error",
+        description: "There was an issue sending your request. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -45,7 +67,7 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Call Us",
-      content: "+1 (647) 123-4567",
+      content: "+16471234567",
       action: "tel:+16471234567",
       color: "primary"
     },
@@ -59,8 +81,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      content: "info@deossacleaning.ca",
-      action: "mailto:info@deossacleaning.ca", 
+      content: "deossacs@outlook.com",
+      action: "mailto:deossacs@outlook.com", 
       color: "accent"
     },
     {
@@ -138,7 +160,7 @@ const Contact = () => {
                         onChange={handleInputChange}
                         required
                         className="mt-2"
-                        placeholder="(647) 123-4567"
+                        placeholder="+16471234567"
                       />
                     </div>
                     <div>

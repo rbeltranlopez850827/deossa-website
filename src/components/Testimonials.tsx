@@ -4,21 +4,21 @@ import { Star, Quote } from "lucide-react";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Sarah Johnson",
+      name: "Veronica Velez",
       role: "Homeowner",
       rating: 5,
       text: "Deossa Cleaning Services transformed our home! Their attention to detail is incredible, and the team is always professional and reliable. I couldn't be happier with their service.",
       location: "Toronto, ON"
     },
     {
-      name: "Michael Chen", 
+      name: "Mark Kolakowski", 
       role: "Business Owner",
       rating: 5,
       text: "We've been using Deossa for our office cleaning for over a year. They're consistently excellent, always on time, and our workplace has never looked better. Highly recommended!",
       location: "Mississauga, ON"
     },
     {
-      name: "Maria Rodriguez",
+      name: "Heidy Nuñez",
       role: "Property Manager",
       rating: 5,
       text: "Professional, trustworthy, and thorough. Deossa handles all our move-in/move-out cleanings and they exceed expectations every single time. The tenants are always impressed.",
