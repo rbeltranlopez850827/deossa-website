@@ -67,15 +67,15 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Call Us",
-      content: "+16471234567",
-      action: "tel:+16471234567",
+      content: "+14168443543",
+      action: "tel:+14168443543",
       color: "primary"
     },
     {
       icon: MessageCircle,
       title: "WhatsApp",
       content: "Chat with us instantly",
-      action: "https://wa.me/16471234567",
+      action: "https://wa.me/14168443543",
       color: "secondary"
     },
     {
@@ -160,7 +160,7 @@ const Contact = () => {
                         onChange={handleInputChange}
                         required
                         className="mt-2"
-                        placeholder="+16471234567"
+                        placeholder="+14168443543"
                       />
                     </div>
                     <div>
