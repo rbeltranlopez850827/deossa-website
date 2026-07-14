@@ -38,11 +38,12 @@ All colors MUST be HSL.
     --ring: 207 85% 35%;
     
     /* Custom Design Tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(207 85% 35%), hsl(207 85% 45%));
+    --hero-gradient: linear-gradient(135deg, hsl(220 30% 7%), hsl(210 55% 18%));
     --section-gradient: linear-gradient(180deg, hsl(0 0% 98%), hsl(0 0% 100%));
     --yellow-glow: 42 96% 55%;
     --blue-deep: 207 85% 25%;
     --red-vibrant: 0 85% 55%;
+    --spotlight-dark: 220 25% 7%;
     
     /* Shadows */
     --shadow-soft: 0 4px 20px -2px hsl(207 85% 35% / 0.1);
@@ -102,7 +103,7 @@ All colors MUST be HSL.
     --ring: 207 85% 45%;
     
     /* Dark Mode Custom Tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(207 85% 25%), hsl(207 85% 35%));
+    --hero-gradient: linear-gradient(135deg, hsl(220 30% 5%), hsl(210 55% 14%));
     --section-gradient: linear-gradient(180deg, hsl(15 15% 10%), hsl(15 15% 8%));
     
     --sidebar-background: 240 5.9% 10%;

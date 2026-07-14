@@ -62,6 +62,7 @@ export default {
           blue: "hsl(var(--blue-deep))",
           yellow: "hsl(var(--yellow-glow))",  
           red: "hsl(var(--red-vibrant))",
+          dark: "hsl(var(--spotlight-dark))",
         },
       },
       backgroundImage: {

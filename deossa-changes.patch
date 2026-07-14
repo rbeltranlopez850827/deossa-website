@@ -1,0 +1,168 @@
+diff --git a/src/components/Services.tsx b/src/components/Services.tsx
+index 141533e..d42f1a9 100644
+--- a/src/components/Services.tsx
++++ b/src/components/Services.tsx
+@@ -1,6 +1,6 @@
+ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+ import { Button } from "@/components/ui/button";
+-import { Home, Building2, Sparkles, Calendar, CheckCircle } from "lucide-react";
++import { Home, Building2, Sparkles, Calendar, CheckCircle, MonitorPlay, Star } from "lucide-react";
+ 
+ const Services = () => {
+   const services = [
+@@ -14,9 +14,10 @@ const Services = () => {
+     {
+       icon: Building2,
+       title: "Commercial Cleaning",
+-      description: "Professional cleaning solutions for offices, retail spaces, and businesses.",
+-      features: ["Office cleaning", "Retail maintenance", "Industrial spaces", "24/7 availability"],
+-      color: "accent"
++      description: "Professional cleaning solutions for offices, retail spaces, and businesses. Your business deserves a cleaner standard.",
++      features: ["Office buildings", "Medical clinics", "Retail stores & banks", "Customized cleaning plans", "24/7 availability"],
++      color: "accent",
++      featured: true
+     },
+     {
+       icon: Sparkles,
+@@ -24,6 +25,13 @@ const Services = () => {
+       description: "Tailored cleaning solutions for unique requirements and spaces.",
+       features: ["Carpet cleaning", "Window washing", "Pressure washing", "Event cleanup"],
+       color: "secondary"
++    },
++    {
++      icon: MonitorPlay,
++      title: "Digital Signage Services",
++      description: "Modern digital signage installation and management to elevate how your business communicates.",
++      features: ["Screen installation", "Content management", "Menu & promo boards", "Ongoing tech support"],
++      color: "primary"
+     }
+   ];
+ 
+@@ -46,9 +54,22 @@ const Services = () => {
+           </p>
+         </div>
+ 
+-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
++        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+           {services.map((service, index) => (
+-            <Card key={index} className="border-0 shadow-soft hover:shadow-glow transition-all duration-300 hover:-translate-y-2 bg-card group">
++            <Card
++              key={index}
++              className={`relative border-0 shadow-soft hover:shadow-glow transition-all duration-300 hover:-translate-y-2 bg-card group ${
++                service.featured
++                  ? "ring-2 ring-secondary lg:scale-105 lg:-translate-y-2 z-10"
++                  : ""
++              }`}
++            >
++              {service.featured && (
++                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-secondary-foreground text-xs font-bold px-4 py-1.5 rounded-full shadow-glow flex items-center gap-1 whitespace-nowrap">
++                  <Star className="w-3.5 h-3.5 fill-secondary-foreground" />
++                  MOST REQUESTED
++                </div>
++              )}
+               <CardHeader className="text-center pb-4">
+                 <div className={`w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 ${
+                   service.color === 'primary' ? 'bg-primary/10 group-hover:bg-primary/20' :
+@@ -61,7 +82,9 @@ const Services = () => {
+                     'text-secondary'
+                   }`} />
+                 </div>
+-                <CardTitle className="text-2xl font-bold text-foreground mb-3">{service.title}</CardTitle>
++                <CardTitle className={`font-bold text-foreground mb-3 ${service.featured ? "text-3xl" : "text-2xl"}`}>
++                  {service.title}
++                </CardTitle>
+                 <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+               </CardHeader>
+               <CardContent>
+@@ -125,4 +148,4 @@ const Services = () => {
+   );
+ };
+ 
+-export default Services;
+\ No newline at end of file
++export default Services;
+diff --git a/src/index.css b/src/index.css
+index aec0707..e726318 100644
+--- a/src/index.css
++++ b/src/index.css
+@@ -18,13 +18,13 @@ All colors MUST be HSL.
+     --popover-foreground: 222.2 84% 4.9%;
+ 
+     /* Deossa Brand Colors */
+-    --primary: 207 85% 35%; /* Deep Blue */
++    --primary: 215 70% 22%; /* Deossa Navy */
+     --primary-foreground: 0 0% 100%;
+     
+     --secondary: 42 96% 55%; /* Golden Yellow */
+     --secondary-foreground: 222.2 84% 4.9%;
+     
+-    --accent: 0 85% 55%; /* Vibrant Red */
++    --accent: 205 75% 45%; /* Deossa Sky Blue */
+     --accent-foreground: 0 0% 100%;
+ 
+     --muted: 210 40% 96.1%;
+@@ -35,17 +35,17 @@ All colors MUST be HSL.
+ 
+     --border: 214.3 31.8% 91.4%;
+     --input: 214.3 31.8% 91.4%;
+-    --ring: 207 85% 35%;
++    --ring: 215 70% 22%;
+     
+     /* Custom Design Tokens */
+-    --hero-gradient: linear-gradient(135deg, hsl(207 85% 35%), hsl(207 85% 45%));
++    --hero-gradient: linear-gradient(135deg, hsl(215 65% 14%), hsl(215 60% 24%));
+     --section-gradient: linear-gradient(180deg, hsl(0 0% 98%), hsl(0 0% 100%));
+     --yellow-glow: 42 96% 55%;
+-    --blue-deep: 207 85% 25%;
+-    --red-vibrant: 0 85% 55%;
++    --blue-deep: 215 70% 16%;
++    --sky-blue: 205 75% 45%;
+     
+     /* Shadows */
+-    --shadow-soft: 0 4px 20px -2px hsl(207 85% 35% / 0.1);
++    --shadow-soft: 0 4px 20px -2px hsl(215 70% 22% / 0.15);
+     --shadow-glow: 0 0 30px hsl(42 96% 55% / 0.3);
+     
+     /* Animations */
+@@ -82,13 +82,13 @@ All colors MUST be HSL.
+     --popover-foreground: 210 40% 98%;
+ 
+     /* Deossa Dark Mode Colors */
+-    --primary: 207 85% 45%; /* Lighter Blue for dark mode */
++    --primary: 215 60% 45%; /* Lighter Navy for dark mode */
+     --primary-foreground: 0 0% 100%;
+     
+     --secondary: 42 96% 60%; /* Brighter Yellow for dark mode */
+     --secondary-foreground: 15 15% 8%;
+     
+-    --accent: 0 85% 60%; /* Brighter Red for dark mode */
++    --accent: 205 80% 55%; /* Brighter Sky Blue for dark mode */
+     --accent-foreground: 0 0% 100%;
+ 
+     --muted: 20 15% 15%;
+@@ -99,10 +99,10 @@ All colors MUST be HSL.
+ 
+     --border: 20 15% 20%;
+     --input: 20 15% 20%;
+-    --ring: 207 85% 45%;
++    --ring: 215 60% 45%;
+     
+     /* Dark Mode Custom Tokens */
+-    --hero-gradient: linear-gradient(135deg, hsl(207 85% 25%), hsl(207 85% 35%));
++    --hero-gradient: linear-gradient(135deg, hsl(215 65% 10%), hsl(215 60% 20%));
+     --section-gradient: linear-gradient(180deg, hsl(15 15% 10%), hsl(15 15% 8%));
+     
+     --sidebar-background: 240 5.9% 10%;
+diff --git a/tailwind.config.ts b/tailwind.config.ts
+index 54c60b0..547b69c 100644
+--- a/tailwind.config.ts
++++ b/tailwind.config.ts
+@@ -61,7 +61,7 @@ export default {
+         deossa: {
+           blue: "hsl(var(--blue-deep))",
+           yellow: "hsl(var(--yellow-glow))",  
+-          red: "hsl(var(--red-vibrant))",
++          sky: "hsl(var(--sky-blue))",
+         },
+       },
+       backgroundImage: {
