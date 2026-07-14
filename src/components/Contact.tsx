@@ -26,8 +26,8 @@ const Contact = () => {
 
     try {
       await emailjs.send(
-        "service_zsz800n", // Reemplaza con tu Service ID
-        "template_m4ovj4q", // Reemplaza con tu Template ID
+        "service_fcgj8qg", // Reemplaza con tu Service ID
+        "template_8w5nizs", // Reemplaza con tu Template ID
         {
           name: formData.name,
           email: formData.email,
@@ -35,7 +35,7 @@ const Contact = () => {
           service: formData.service,
           message: formData.message,
         },
-        "YOUR_PUBLIC_KEY" // Reemplaza con tu Public Key
+        "PrYOQggzkUAjITf-1" // Reemplaza con tu Public Key
       );
 
       toast({
