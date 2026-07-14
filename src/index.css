@@ -18,7 +18,7 @@ All colors MUST be HSL.
     --popover-foreground: 222.2 84% 4.9%;
 
     /* Deossa Brand Colors */
-    --primary: 207 85% 35%; /* Deep Blue */
+    --primary: 207 75% 14%; /* Deossa Navy (unified with Hero/Footer) */
     --primary-foreground: 0 0% 100%;
     
     --secondary: 42 96% 55%; /* Golden Yellow */
@@ -35,18 +35,18 @@ All colors MUST be HSL.
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 207 85% 35%;
+    --ring: 207 75% 14%;
     
     /* Custom Design Tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(220 30% 7%), hsl(210 55% 18%));
+    --hero-gradient: linear-gradient(135deg, hsl(207 75% 8%), hsl(207 78% 19%));
     --section-gradient: linear-gradient(180deg, hsl(0 0% 98%), hsl(0 0% 100%));
     --yellow-glow: 42 96% 55%;
     --blue-deep: 207 85% 25%;
     --red-vibrant: 0 85% 55%;
-    --spotlight-dark: 220 25% 7%;
+    --spotlight-dark: 207 75% 9%;
     
     /* Shadows */
-    --shadow-soft: 0 4px 20px -2px hsl(207 85% 35% / 0.1);
+    --shadow-soft: 0 4px 20px -2px hsl(207 75% 14% / 0.18);
     --shadow-glow: 0 0 30px hsl(42 96% 55% / 0.3);
     
     /* Animations */
@@ -103,7 +103,7 @@ All colors MUST be HSL.
     --ring: 207 85% 45%;
     
     /* Dark Mode Custom Tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(220 30% 5%), hsl(210 55% 14%));
+    --hero-gradient: linear-gradient(135deg, hsl(207 75% 6%), hsl(207 80% 14%));
     --section-gradient: linear-gradient(180deg, hsl(15 15% 10%), hsl(15 15% 8%));
     
     --sidebar-background: 240 5.9% 10%;
